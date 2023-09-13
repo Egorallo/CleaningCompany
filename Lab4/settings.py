@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'cleaning.apps.CleaningConfig',
     'cart',
     'order.apps.OrderConfig',
-    'administration'
+    'administration',
+    'newvision',
 ]
 
 MIDDLEWARE = [

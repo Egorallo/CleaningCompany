@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'newvision:about' %}">О компании</a></li>
+                <li><a href="#news">Новости</a></li>
+                <li><a href="#faq">Список часто задаваемых вопросов</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="#privacy">Политика конфиденциальности</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#promocodes">Промокоды и купоны</a></li>
+            </ul>
+        </nav>
+        <h1>Краткая информация о последней опубликованной статье</h1>
+        <p>Здесь вы можете узнать о нашей последней статье и ее кратком содержании.</p>
+    </header>
+
+    <a href="https://lepei.by/" target="_blank">
+        <section class="banner">
+            <img src="https://chistyulya.com/c.jpg" alt="Реклама">
+        </section>
+    </a>
+
+    <section class="partners">
+        <h2>Компании-партнеры</h2>
+        <table style="border-collapse: separate; border-spacing: 20px 0;">
+            <tr>
+                <td>
+                    <a href="https://www.mastercard.com" target="_blank">
+                        <img src="https://www.mastercard.com/content/dam/public/mastercardcom/na/us/en/homepage/Home/mc-logo-52.svg" alt="MC logo">
+                    </a>
+                </td>
+                <td>
+                    <a href="https://gazelkin.ru/" target="_blank">
+                        <img src="https://gazelkin.ru/build/assets/header-logo-df51ac3d.png" alt="gazelkin logo" style="max-width: 80px;">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Ваш сайт</p>
+    </footer>
+</body>
+</html>
