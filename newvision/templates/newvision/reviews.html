@@ -1,0 +1,51 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <header>
+        <h1>Отзывы</h1>
+        <p>Здесь вы можете оставить свой отзыв о нашей компании.</p>
+    </header>
+
+    <section>
+        <h2>Список отзывов</h2>
+        <ul>
+            <li>
+                <p><strong>Имя:</strong> Анна</p>
+                <p><strong>Оценка:</strong> 5 звезд</p>
+                <p><strong>Отзыв:</strong> Очень довольна услугами компании. Профессиональная уборка и внимательный персонал.</p>
+                <p><strong>Дата:</strong> 20 сентября 2023</p>
+            </li>
+            <!-- Добавьте больше отзывов по мере необходимости -->
+        </ul>
+    </section>
+
+    <section>
+        <h2>Добавить отзыв</h2>
+        <form>
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="rating">Оценка:</label>
+            <select id="rating" name="rating" required>
+                <option value="5">5 звезд</option>
+                <option value="4">4 звезды</option>
+                <option value="3">3 звезды</option>
+                <option value="2">2 звезды</option>
+                <option value="1">1 звезда</option>
+            </select>
+
+            <label for="review">Отзыв:</label>
+            <textarea id="review" name="review" rows="4" required></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Сleaning company</p>
+    </footer>
+{% endblock %}

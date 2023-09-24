@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <header>
+        <h1>Контакты</h1>
+        <p>Здесь представлены контакты наших сотрудников.</p>
+    </header>
+
+    <section>
+        <h2>Наша команда</h2>
+        <ul>
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Dwayne_Johnson_2014_%28cropped%29.jpg/220px-Dwayne_Johnson_2014_%28cropped%29.jpg" alt="Фото Сотрудника 1">
+                <p><strong>Имя:</strong> Иван Иванов</p>
+                <p><strong>Должность:</strong> Уборщик</p>
+                <p><strong>Телефон:</strong> +7 (123) 456-7890</p>
+                <p><strong>Email:</strong> ivan@example.com</p>
+            </li>
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/JenniferAnistonHWoFFeb2012.jpg/220px-JenniferAnistonHWoFFeb2012.jpg" alt="Фото Сотрудника 2">
+                <p><strong>Имя:</strong> Ольга Петрова</p>
+                <p><strong>Должность:</strong> Менеджер по клиентам</p>
+                <p><strong>Телефон:</strong> +7 (987) 654-3210</p>
+                <p><strong>Email:</strong> olga@example.com</p>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Сleaning company</p>
+    </footer>
+{% endblock %}
