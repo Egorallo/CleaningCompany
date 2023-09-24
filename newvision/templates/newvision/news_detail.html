@@ -4,6 +4,7 @@
     <section>
         <article>
             <h1>{{ news.title }}</h1>
+            <img src="{{ news.image_url }}" alt="{{ news.title }}">
             <p>{{ news.content }}</p>
             <p>Дата публикации: {{ news.pub_date }}</p>
         </article>

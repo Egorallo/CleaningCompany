@@ -10,18 +10,18 @@
         <hr>
         <article>
             <h3>{{ latest_news.title }}</h3>
+            <img src="{{ latest_news.image_url }}" alt="{{ latest_news.title }}">
             <p>{{ latest_news.content|truncatewords:20 }}</p>
             <a href="{% url 'newvision:news_detail' latest_news.pk %}">Read more</a>
             <p>Дата публикации: {{ latest_news.pub_date }}</p>
         </article>
     </section>
 
-    <a href="https://lepei.by/" target="_blank" style="display: inline-block; width: 300px; height: 250px;">
-        <section class="banner">
+    <section>
+        <a href="https://lepei.by/" target="_blank" style="display: inline-block; width: 300px; height: 250px;">
             <img src="https://chistyulya.com/c.jpg" alt="Реклама" style="width: 150%; height: 100%; ">
-        </section>
-    </a>
-
+        </a>
+    </section>
 
     <section class="partners">
         <h2>Компании-партнеры</h2>
