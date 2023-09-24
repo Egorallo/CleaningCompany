@@ -1,28 +1,33 @@
 {% extends "base_generic.html" %}
 {% load static %}
 
-{% block title %}
-{% endblock %}
-
 {% block content %}
     <header>
-        <h1>Промокоды и купоны</h1>
-        <p>Здесь вы можете найти актуальные промокоды и купоны для наших услуг.</p>
+        <h1>Promos</h1>
+        <p>Explore our current and archived promos.</p>
     </header>
 
     <section>
-        <h2>Доступные промокоды</h2>
-        <article>
-            <h3>Промокод 1</h3>
-            <p>Скидка 10% на уборку квартиры. Действителен до 31 декабря 2023 года.</p>
-        </article>
-
-        <article>
-            <h3>Промокод 2</h3>
-            <p>Бесплатная уборка при заказе комплексного обслуживания офиса. Действителен до 30 ноября 2023 года.</p>
-        </article>
-
+        <h2>Active Promos</h2>
+        {% for promo in active_promos %}
+            <article>
+                <mark>{{ promo.code }}</mark>
+                <p>{{ promo.description }}</p>
+            </article>
+        {% empty %}
+            <p>No active promos available.</p>
+        {% endfor %}
     </section>
 
-
+    <section>
+        <h2>Archived Promos</h2>
+        {% for promo in archived_promos %}
+            <article>
+                <mark>{{ promo.code }}</mark>
+                <p>{{ promo.description }}</p>
+            </article>
+        {% empty %}
+            <p>No archived promos available.</p>
+        {% endfor %}
+    </section>
 {% endblock %}

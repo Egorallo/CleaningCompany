@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse
-from .models import News
+from .models import News, Promo
 def home(request):
     latest_news = News.objects.latest('pub_date')
     context = {'latest_news': latest_news}
@@ -29,3 +29,14 @@ def news(request):
 def news_detail(request, news_id):
     news = News.objects.get(pk=news_id)
     return render(request, 'newvision/news_detail.html', {'news': news})
+
+def promos(request):
+    active_promos = Promo.objects.filter(is_archived=False)
+    archived_promos = Promo.objects.filter(is_archived=True)
+
+    context = {
+        'active_promos': active_promos,
+        'archived_promos': archived_promos,
+    }
+
+    return render(request, 'newvision/promos.html', context)
