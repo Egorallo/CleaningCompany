@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <section>
+        <article>
+            <h1>{{ news.title }}</h1>
+            <p>{{ news.content }}</p>
+            <p>Дата публикации: {{ news.pub_date }}</p>
+        </article>
+    </section>
+{% endblock %}

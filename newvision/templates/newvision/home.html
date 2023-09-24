@@ -5,10 +5,16 @@
 {% endblock %}
 
 {% block content %}
-    <header>
-        <h1>Краткая информация о последней опубликованной статье</h1>
-        <p>Здесь вы можете узнать о нашей последней статье и ее кратком содержании.</p>
-    </header>
+    <section>
+        <h2>Последние новости</h2>
+        <hr>
+        <article>
+            <h3>{{ latest_news.title }}</h3>
+            <p>{{ latest_news.content|truncatewords:20 }}</p>
+            <a href="{% url 'newvision:news_detail' latest_news.pk %}">Read more</a>
+            <p>Дата публикации: {{ latest_news.pub_date }}</p>
+        </article>
+    </section>
 
     <a href="https://lepei.by/" target="_blank" style="display: inline-block; width: 300px; height: 250px;">
         <section class="banner">
@@ -23,20 +29,20 @@
             <tr>
                 <td>
                     <a href="https://www.mastercard.com" target="_blank">
-                        <img src="https://www.mastercard.com/content/dam/public/mastercardcom/na/us/en/homepage/Home/mc-logo-52.svg" alt="MC logo">
+                        <img src="https://www.mastercard.com/content/dam/public/mastercardcom/na/us/en/homepage/Home/mc-logo-52.svg"
+                             alt="MC logo">
                     </a>
                 </td>
                 <td>
                     <a href="https://gazelkin.ru/" target="_blank">
-                        <img src="https://gazelkin.ru/build/assets/header-logo-df51ac3d.png" alt="gazelkin logo" style="max-width: 80px;">
+                        <img src="https://gazelkin.ru/build/assets/header-logo-df51ac3d.png" alt="gazelkin logo"
+                             style="max-width: 80px;">
                     </a>
                 </td>
             </tr>
         </table>
     </section>
 
-    <footer>
-        <p>&copy; 2023 Сleaning company</p>
-    </footer>
+
 
 {% endblock %}

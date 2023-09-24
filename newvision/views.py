@@ -1,14 +1,12 @@
 from django.shortcuts import render
-
+from django.urls import reverse
+from .models import News
 def home(request):
-    return render(request, 'newvision/home.html')
-
+    latest_news = News.objects.latest('pub_date')
+    context = {'latest_news': latest_news}
+    return render(request, 'newvision/home.html', context)
 def about(request):
     return render(request, 'newvision/about.html')
-
-def news(request):
-    return render(request, 'newvision/news.html')
-
 def questions(request):
     return render(request, 'newvision/questions.html')
 
@@ -23,3 +21,11 @@ def policy(request):
 
 def promos(requset):
     return render(requset, 'newvision/promos.html')
+
+def news(request):
+    all_news = News.objects.all().order_by('-pub_date')
+    return render(request, 'newvision/news.html', {'all_news': all_news})
+
+def news_detail(request, news_id):
+    news = News.objects.get(pk=news_id)
+    return render(request, 'newvision/news_detail.html', {'news': news})
