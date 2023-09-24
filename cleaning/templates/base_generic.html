@@ -50,6 +50,25 @@
         .login-button:hover {
             background-color: #d4d4d4;
         }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Minimum height of the viewport */
+            margin: 0;
+        }
+
+        main {
+            flex: 1; /* Expand and push the footer to the bottom */
+        }
+
+        footer {
+            background-color: #f0f0f0; /* Set the background color as needed */
+            padding: 10px;
+            text-align: center;
+        }
+
+        
     </style>
 </head>
 <body>
@@ -115,8 +134,9 @@
     </div>
 
 </div>
-<footer>
-    <p>&copy; 2023 Cleaning company</p>
+<div style="flex-grow: 1;"></div>
+<footer style="background-color: #333; color: white; text-align: center; padding: 10px 0;">
+    <p>&copy; 2023 Cleaning Company</p>
 </footer>
 
 <script>
