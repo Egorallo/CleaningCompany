@@ -43,4 +43,12 @@
             </form>
         </article>
     </section>
+
+    <div class="pic" style="max-width: 30%">
+        <picture>
+            <source srcset="{% static 'newvision/images/soap.jpg' %} 800w" media="(min-width: 800px)">
+            <img src="{% static 'newvision/images/soap-down-scaled.jpg' %}" alt="Soap Image" width="90%">
+        </picture>
+    </div>
+
 {% endblock %}

@@ -4,6 +4,13 @@
 
 
 {% block content %}
+    <style>
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
     <header>
         <h1>Контакты</h1>
         <p>Здесь представлены контакты наших сотрудников.</p>
@@ -53,5 +60,30 @@
             <p><strong>Адрес:</strong> Санкт-Петербург, наб. Водный, д. 4</p>
             <p><strong>Телефон:</strong> +7 (812) 555-7890</p>
         </article>
+    </section>
+    <section>
+        <h2>График работы колл-центра</h2>
+        <table border="2">
+            <tr style="border: 1px solid black;">
+                <th>День</th>
+                <th>Номер</th>
+                <th>Офис</th>
+                <th colspan="2">Адрес</th>
+            </tr>
+            <tr>
+                <td>Четверг</td>
+                <td>+7 (499) 987-6543</td>
+                <td>Оффлайн</td>
+                <td>ул. Пушкина, д. 13,</td>
+                <td>Москва</td>
+            </tr>
+            <tr>
+                <td>Пятница</td>
+                <td>+7 (812) 555-7890</td>
+                <td>Оффлайн</td>
+                <td>наб. Водный, д. 4,</td>
+                <td>Санкт-Петербург</td>
+            </tr>
+        </table>
     </section>
 {% endblock %}
