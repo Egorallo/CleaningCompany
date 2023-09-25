@@ -7,6 +7,9 @@ def home(request):
     return render(request, 'newvision/home.html', context)
 def about(request):
     return render(request, 'newvision/about.html')
+
+def vacancies(request):
+    return render(request, 'newvision/vacancies.html')
 def questions(request):
     return render(request, 'newvision/questions.html')
 

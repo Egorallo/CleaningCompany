@@ -6,6 +6,7 @@ app_name = 'newvision'
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
+    path('vacancies/', views.vacancies, name='vacancies'),
     path('news/', views.news, name='news'),
     path('questions/', views.questions, name='questions'),
     path('reviews/', views.reviews, name='reviews'),
