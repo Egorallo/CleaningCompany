@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
-from .models import News, Promo
+from django.views.generic import ListView
+from .forms import ReviewForm
+
+from .models import News, Promo, Review
 def home(request):
     latest_news = News.objects.latest('pub_date')
     context = {'latest_news': latest_news}
@@ -14,7 +17,26 @@ def questions(request):
     return render(request, 'newvision/questions.html')
 
 def reviews(request):
-    return render(request, 'newvision/reviews.html')
+    reviews = Review.objects.all()
+    form = ReviewForm()
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            new_review = Review(
+                reviewer_name=request.user.username,  # Get the username of the logged-in user
+                rating=form.cleaned_data['rating'],
+                text=form.cleaned_data['text']
+            )
+            new_review.save()
+            return redirect('newvision:reviews')
+
+    return render(request, 'newvision/reviews.html', {'reviews': reviews, 'form': form})
+
+class ReviewListView(ListView):
+    model = Review
+    template_name = 'newvision/reviews.html'
+    context_object_name = 'reviews'
 
 def contacts(request):
     return render(request, 'newvision/contacts.html')
