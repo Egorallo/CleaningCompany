@@ -44,11 +44,14 @@
         </article>
     </section>
 
-    <div class="pic" style="max-width: 30%">
-        <picture>
-            <source srcset="{% static 'newvision/images/soap.jpg' %} 800w" media="(min-width: 800px)">
-            <img src="{% static 'newvision/images/soap-down-scaled.jpg' %}" alt="Soap Image" width="90%">
-        </picture>
+    <div class="pic" >
+        <img
+                srcset="
+                https://hips.hearstapps.com/hmg-prod/images/girl-preparing-to-spring-clean-royalty-free-image-1643238913.jpg 1200w,
+                https://hips.hearstapps.com/hmg-prod/images/girl-preparing-to-spring-clean-royalty-free-image-1643238913.jpg 800w,
+                https://hips.hearstapps.com/hmg-prod/images/girl-preparing-to-spring-clean-royalty-free-image-1643238913.jpg 400w"
+                sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 10vw"
+                src="https://hips.hearstapps.com/hmg-prod/images/girl-preparing-to-spring-clean-royalty-free-image-1643238913.jpg" alt="Cleaningjpg">
     </div>
 
 {% endblock %}
