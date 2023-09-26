@@ -24,7 +24,7 @@ def reviews(request):
         form = ReviewForm(request.POST)
         if form.is_valid():
             new_review = Review(
-                reviewer_name=request.user.username,  # Get the username of the logged-in user
+                reviewer_name=request.user.username,
                 rating=form.cleaned_data['rating'],
                 text=form.cleaned_data['text']
             )

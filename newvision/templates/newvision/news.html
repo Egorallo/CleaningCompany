@@ -9,7 +9,6 @@
                     <article>
                         <h2>{{ news.title }}</h2>
                         <img src="{{ news.image_url }}" alt="{{ news.title }}">
-
                         <section class="news-content">
                             {{ news.content|truncatewords:30 }}
                             <a href="{% url 'newvision:news_detail' news.id %}">Читать далее</a>
@@ -20,4 +19,9 @@
             {% endfor %}
         </ul>
     </section>
+    <picture>
+        <source srcset="https://cdn.7tv.app/emote/650dfb6258b80a4d09f0fae6/4x.webp" type="image/webp">
+        <img src="https://cdn.7tv.app/emote/650dfb6258b80a4d09f0fae6/4x.jpg" alt="">
+    </picture>
+
 {% endblock %}
