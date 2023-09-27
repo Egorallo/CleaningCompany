@@ -7,7 +7,8 @@ from .models import Order
 from django.core.exceptions import PermissionDenied
 from statistics import mean, mode, median
 from collections import Counter
-
+import logging
+logger = logging.getLogger(__name__)
 
 
 
@@ -35,7 +36,7 @@ def order_create(request):
             servicepackinstance.save()
 
         cart.clear()
-
+        logger.info("New order has been posted")
         return render(request, 'order/created.html', {'order': order})
 
     return render(request, 'order/create.html', {'cart': cart})

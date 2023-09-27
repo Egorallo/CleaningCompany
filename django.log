@@ -1,0 +1,9 @@
+INFO 2023-09-27 14:41:19,822 Watching for file changes with StatReloader
+INFO 2023-09-27 14:43:07,890 New user was registered!
+DEBUG 2023-09-27 14:43:07,927 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-27 14:43:08,459 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-27 14:49:59,808 /home/egor/CleaningCompany/order/views.py changed, reloading.
+INFO 2023-09-27 14:50:00,313 Watching for file changes with StatReloader
+INFO 2023-09-27 14:50:17,028 New order has been posted  
+DEBUG 2023-09-27 14:51:10,755 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-27 14:51:11,305 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
