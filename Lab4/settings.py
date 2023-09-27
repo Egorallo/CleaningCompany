@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -23,10 +24,27 @@ LOGGING = {
     },
     'handlers': {
         'file': {
-            'level': 'DEBUG',  # (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+            'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'filename': 'django.log',
             'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'my_custom_actions': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'matplotlib': {  # Add a logger configuration for Matplotlib
+            'handlers': ['file'],
+            'level': 'ERROR',  # Set the desired logging level for Matplotlib
+            'propagate': False,
         },
     },
     'root': {
@@ -34,6 +52,7 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

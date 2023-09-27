@@ -1,13 +1,18 @@
+from django.db.models import Sum, Count, F, OuterRef, Subquery
+from django.db.models.functions import TruncDate
+from django.db import models
 from django.shortcuts import render, redirect
 from django.views import generic
 from cleaning.models import ServicePack
 from .models import OrderItem
 from cart.cart import Cart
-from .models import Order
+from .models import Order, OrderItem
 from django.core.exceptions import PermissionDenied
 from statistics import mean, mode, median
 from collections import Counter
 import logging
+import matplotlib
+from matplotlib import pyplot as plt
 logger = logging.getLogger(__name__)
 
 
@@ -33,6 +38,7 @@ def order_create(request):
             )
             servicepackinstance.purchase_count += item['quantity']
             servicepackinstance.status = 'o'
+
             servicepackinstance.save()
 
         cart.clear()
@@ -45,6 +51,52 @@ def order_create(request):
 class OrderListView(generic.ListView):
     model = Order
     template_name = 'order/order_list.html'
+
+    orderitem_subquery = OrderItem.objects.filter(order_id=OuterRef('id')).values('order_id').annotate(
+        total_price=Sum(F('price'))
+    ).values('total_price')
+
+    result = Order.objects.annotate(day=TruncDate('created')).values('day').annotate(
+        order_count=Count('id'),
+        total_order_price=Subquery(orderitem_subquery, output_field=models.DecimalField())
+    ).order_by('day')
+
+    # dates = [item['day'] for item in result]
+    # order_counts = [item['order_count'] for item in result]
+    # total_order_prices = [item['total_order_price'] or 0 for item in result]
+    grouped_dates = {}
+    grouped_order_counts = {}
+    grouped_total_order_prices = {}
+
+    for item in result:
+        day = item['day']
+        order_count = item['order_count']
+        total_order_price = item['total_order_price']
+
+        if day in grouped_dates:
+            grouped_order_counts[day] += order_count
+            grouped_total_order_prices[day] += total_order_price
+        else:
+            grouped_dates[day] = day
+            grouped_order_counts[day] = order_count
+            grouped_total_order_prices[day] = total_order_price
+    for day, order_count in grouped_order_counts.items():
+        total_order_price = grouped_total_order_prices[day]
+        print(f"Day: {day}, Order Count: {order_count}, Total Order Price: {total_order_price}")
+
+    dates = list(grouped_dates.keys())
+    total_order_prices = list(grouped_total_order_prices.values())
+
+    matplotlib.pyplot.switch_backend('Agg')
+    plt.plot(dates, total_order_prices, marker='o', linestyle='-')
+    plt.xlabel('Date')
+    plt.ylabel('Total Order Price')
+    plt.title('Total Order Prices Over Time')
+    plt.xticks(rotation=45)
+
+    plt.tight_layout()
+    plt.grid(True)
+    plt.savefig('order/static/order/images/plot.png', format='png')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

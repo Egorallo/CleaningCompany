@@ -1,10 +1,11 @@
 {% extends "base_generic.html" %}
-
+{% load static %}
 {% block content %}
     <h1>Order List</h1>
 
     <h2>Statistics:</h2>
   <table>
+
     <tr>
         <td><strong>Total Sales:</strong></td>
         <td>${{ total_sales }}</td>
@@ -30,6 +31,10 @@
         <td>{{ item_with_most_profit }}</td>
     </tr>
 </table>
+    <section>
+        <img src="{% static 'order/images/plot.png' %} " alt="graph">
+    </section>
+
     <h2>Client List:</h2>
     {% if client_list %}
         <ul>
