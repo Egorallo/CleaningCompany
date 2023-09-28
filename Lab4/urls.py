@@ -26,10 +26,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('administration/', include('administration.urls', namespace='administration')),
     path('cleaning/', include('cleaning.urls')),
-    path('', RedirectView.as_view(url='cleaning/')),
+    #path('', RedirectView.as_view(url='cleaning/')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/register/', register, name='register'),
     path('cart/', include('cart.urls', namespace='cart')),
     path('order/', include('order.urls', namespace='order')),
+    path('', include('newvision.urls'))
 
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

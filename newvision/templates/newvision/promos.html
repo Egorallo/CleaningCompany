@@ -1,0 +1,40 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+    <header>
+        <h1>Promos</h1>
+        <p>Explore our current and archived promos.</p>
+    </header>
+
+    <section>
+        <h2>Active Promos</h2>
+        {% for promo in active_promos %}
+            <article>
+                <mark>{{ promo.code }}</mark>
+                <p>{{ promo.description }}</p>
+            </article>
+        {% empty %}
+            <p>No active promos available.</p>
+        {% endfor %}
+    </section>
+
+    <section>
+        <h2>Archived Promos</h2>
+        {% for promo in archived_promos %}
+            <article>
+                <mark>{{ promo.code }}</mark>
+                <p>{{ promo.description }}</p>
+            </article>
+        {% empty %}
+            <p>No archived promos available.</p>
+        {% endfor %}
+    </section>
+
+    <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/TST_East_Waterfront_Podium_Garden_trash_bin.JPG/220px-TST_East_Waterfront_Podium_Garden_trash_bin.JPG"
+             alt="amogus">
+        <figcaption>Fire hydrant</figcaption>
+    </figure>
+
+{% endblock %}

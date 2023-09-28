@@ -1,0 +1,63 @@
+`{% extends "base_generic.html" %}
+{% load static %}
+
+
+{% block content %}
+    <header>
+        <h1>Vocabulary</h1>
+        <p>Here you can find most popular questions and answers to them.</p>
+    </header>
+
+    <section>
+        <article>
+            <details>
+                <summary>What is cleaning?</summary>
+                <h3>What is cleaning?</h3>
+                <p>Cleaning is <s>professional cleaning</s> and maintenance of premises and facilities using
+                    specialized tools and technologies.</p>
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>What services does your company provide??</summary>
+                <h3>What services does your company provide??</h3>
+                <p>We provide a wide range of services including house cleaning, building maintenance, carpet cleaning,
+                    and much more. For more information, visit our Services page.</p>
+            </details>
+        </article>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section id="listing">
+        <pre>
+        #include &lt;iostream&gt;
+
+        int main() {
+            std::cout << "Hello, World!" << std::endl;
+            return 0;
+        }
+        </pre>
+    </section>
+    <br>
+    <p><abbr title="What The Haaam">WTH</abbr> is an abbreviation for What The Haaam.</p>
+    <br>
+    <p><dfn>HTML</dfn> stands for Hypertext Markup Language.</p>
+    <br>
+    <blockquote>
+        <p>Жизнь — это как вождение велосипеда. Чтобы сохранить равновесие, вы должны двигаться.</p>
+        <cite>Альберт Эйнштейн</cite>
+    </blockquote>
+
+    <section>
+        <h2>Audio example:::::->>>>>></h2>
+        <audio controls>
+            <source src="{% static 'newvision/audio/guy-yelling-among-us-sound-effect.mp3' %}" type="audio/mpeg">
+            Not supported
+        </audio>
+    </section>
+
+
+{% endblock %}
+`

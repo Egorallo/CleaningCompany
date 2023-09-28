@@ -13,6 +13,9 @@ STAFF_ROLE = 'Staff'
 ADMIN_ROLE = 'Admin'
 
 # Create your views here.
+import logging
+logger = logging.getLogger(__name__)
+
 
 def register(request):
     if request.method == 'POST':
@@ -31,6 +34,8 @@ def register(request):
                 group = Group.objects.get_or_create(name='Customer')[0]
                 user.groups.add(group)
             user.save()
+            logger.info('New user has been registered')
+
             login(request, user)
             return redirect('index')
     else:

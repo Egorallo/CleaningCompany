@@ -1,17 +1,39 @@
 {% extends "base_generic.html" %}
-
+{% load static %}
 {% block content %}
     <h1>Order List</h1>
 
     <h2>Statistics:</h2>
-    <p>
-        <strong>Total Sales:</strong> ${{ total_sales }}
-        <strong>Mean:</strong> ${{ sales_mean }}
-        <strong>Mode:</strong> ${{ sales_mode }}
-        <strong>Median:</strong> ${{ sales_median }}
-        <strong>Most popular pack:</strong> {{ popular_item }}
-        <strong>Most profitable pack:</strong> {{ item_with_most_profit }}
-    </p>
+  <table>
+
+    <tr>
+        <td><strong>Total Sales:</strong></td>
+        <td>${{ total_sales }}</td>
+    </tr>
+    <tr>
+        <td><strong>Mean:</strong></td>
+        <td>${{ sales_mean }}</td>
+    </tr>
+    <tr>
+        <td><strong>Mode:</strong></td>
+        <td>${{ sales_mode }}</td>
+    </tr>
+    <tr>
+        <td><strong>Median:</strong></td>
+        <td>${{ sales_median }}</td>
+    </tr>
+    <tr>
+        <td><strong>Most popular pack:</strong></td>
+        <td>{{ popular_item }}</td>
+    </tr>
+    <tr>
+        <td><strong>Most profitable pack:</strong></td>
+        <td>{{ item_with_most_profit }}</td>
+    </tr>
+</table>
+    <section>
+        <img src="{% static 'order/images/plot.png' %} " alt="graph">
+    </section>
 
     <h2>Client List:</h2>
     {% if client_list %}

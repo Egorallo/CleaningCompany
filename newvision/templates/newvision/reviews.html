@@ -1,0 +1,43 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+    <header>
+        <h1>Customer Reviews</h1>
+    </header>
+
+    <section>
+        <h2>Reviews</h2>
+        <ul>
+            {% for review in reviews %}
+                <li>
+                    <h3>{{ review.reviewer_name }}</h3>
+                    <p>Rating: {{ review.rating }} ⭐</p>
+                    <p>{{ review.text }}</p>
+                    <p>Date: {{ review.date }}</p>
+                </li>
+            {% empty %}
+                <p>No reviews available.</p>
+            {% endfor %}
+        </ul>
+    </section>
+
+    {% if user.is_authenticated %}
+        {% for group in user.groups.all %}
+            {% if group.name == 'Customer' %}
+                <section>
+                    <h2>Leave a Review</h2>
+                    <form method="post" action="{% url 'newvision:reviews' %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Submit Review</button>
+                    </form>
+                </section>
+            {% else %}
+                <p>You must be logged in as a customer to leave a review.</p>
+        {% endif %}
+        {% endfor %}
+    {% else %}
+        <p><a href="{% url 'login' %}?next={{ '/reviews' }}">Log in as customer</a> to leave a review.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+    <section>
+        <h2>Latest news</h2>
+        <hr>
+        <article>
+            <h3>{{ latest_news.title }}</h3>
+            <img src="{{ latest_news.image_url }}" alt="{{ latest_news.title }}">
+            <p>{{ latest_news.content|truncatewords:20 }}</p>
+            <a href="{% url 'newvision:news_detail' latest_news.pk %}">Read more</a>
+            <p>Дата публикации: {{ latest_news.pub_date }}</p>
+        </article>
+    </section>
+
+    <section id="banner">
+        <a href="https://lepei.by/" target="_blank" style="display: inline-block; width: 300px; height: 250px;">
+            <img src="https://chistyulya.com/c.jpg" alt="ads" style="width: 150%; height: 100%; ">
+        </a>
+    </section>
+
+    <section class="partners">
+        <h2>Partners</h2>
+        <table style="border-collapse: separate; border-spacing: 20px 0;">
+            <tr>
+                <td>
+                    <a href="https://www.mastercard.com" target="_blank">
+                        <img src="https://www.mastercard.com/content/dam/public/mastercardcom/na/us/en/homepage/Home/mc-logo-52.svg"
+                             alt="MC logo">
+                    </a>
+                </td>
+                <td>
+                    <a href="https://gazelkin.ru/" target="_blank">
+                        <img src="https://gazelkin.ru/build/assets/header-logo-df51ac3d.png" alt="gazelkin logo"
+                             style="max-width: 80px;">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+
+
+{% endblock %}
