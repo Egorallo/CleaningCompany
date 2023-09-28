@@ -41,9 +41,9 @@ LOGGING = {
             'level': 'INFO',
             'propagate': False,
         },
-        'matplotlib': {  # Add a logger configuration for Matplotlib
+        'matplotlib': {
             'handlers': ['file'],
-            'level': 'ERROR',  # Set the desired logging level for Matplotlib
+            'level': 'ERROR',
             'propagate': False,
         },
     },

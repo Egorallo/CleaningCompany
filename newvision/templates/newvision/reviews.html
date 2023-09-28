@@ -1,7 +1,6 @@
 {% extends "base_generic.html" %}
 {% load static %}
 
-
 {% block content %}
     <header>
         <h1>Customer Reviews</h1>
@@ -13,7 +12,7 @@
             {% for review in reviews %}
                 <li>
                     <h3>{{ review.reviewer_name }}</h3>
-                    <p>Rating: {{ review.rating }}</p>
+                    <p>Rating: {{ review.rating }} ⭐</p>
                     <p>{{ review.text }}</p>
                     <p>Date: {{ review.date }}</p>
                 </li>
