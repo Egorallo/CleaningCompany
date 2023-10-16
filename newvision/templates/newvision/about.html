@@ -1,6 +1,10 @@
 {% extends "base_generic.html" %}
 {% load static %}
 
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'newvision/css/about.css' %}"/>
+{% endblock %}
+
 {% block title %}
 {% endblock %}
 {% block content %}
@@ -14,9 +18,10 @@
              alt="logo" width="200" height="200">
     </section>
 
-    <section>
+    <section class="section-select">
+    qweqwe
         <h2><em>Info about us</em></h2>
-        <pre>
+        <pre class="aboba">
 
 The company cares about your comfort and the cleanliness of your space.
 Our experience and dedication ensure that every client receives the highest

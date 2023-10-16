@@ -1,0 +1,12 @@
+.first-letter::first-letter {
+    color: red;
+    font-size: xx-large;
+}
+
+.ul-news {
+    list-style-type: none;
+}
+
+.li-news::before {
+    content: "\2605";
+}

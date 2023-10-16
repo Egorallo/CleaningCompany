@@ -9,3 +9,18 @@
 .li-reviews:nth-child(2n) {
     color: orangered;
 }
+
+.ul-reviews {
+    list-style-type: none;
+
+}
+
+.li-reviews::before {
+    content: "\2605";
+}
+
+.li-reviews {
+    margin-right: 50px;
+    margin-left: 50px;
+
+}

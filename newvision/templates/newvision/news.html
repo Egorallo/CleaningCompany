@@ -10,9 +10,9 @@
 {#    <link rel="stylesheet" href="{% static 'newvision/css/news.css' %}"/>#}
     <section>
         <h1>News</h1>
-        <ul>
+        <ul class="ul-news">
             {% for news in all_news %}
-                <li>
+                <li class="li-news">
                     <article>
                         <h2>{{ news.title }}</h2>
                         <img src="{{ news.image_url }}" alt="{{ news.title }}">

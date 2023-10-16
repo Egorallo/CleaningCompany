@@ -1,0 +1,9 @@
+.h1-star::before {
+    content: "\2605";
+    font-size: 150%;
+}
+
+.h1-star::after {
+    content: "\2605";
+    font-size: 150%;
+}

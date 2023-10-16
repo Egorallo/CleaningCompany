@@ -1,0 +1,3 @@
+.section-select>pre::selection {
+    background-color: red;
+}
