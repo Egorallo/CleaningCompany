@@ -1,0 +1,52 @@
+.sidebar-nav {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    margin-right: 10px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 5px 17px;
+
+    background-color: #eaeaea;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #d4d4d4;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Minimum height of the viewport */
+    margin: 0;
+    background-color: #d3d3d3;
+}
+
+main {
+    flex: 1; /* Expand and push the footer to the bottom */
+}
+
+footer {
+    background-color: #f0f0f0; /* Set the background color as needed */
+    padding: 10px;
+    text-align: center;
+}

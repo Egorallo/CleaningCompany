@@ -1,0 +1,11 @@
+.li-reviews:first-child {
+    background-color: lime;
+}
+
+.li-reviews:last-child {
+    font-style: italic;
+}
+
+.li-reviews:nth-child(2n) {
+    color: orangered;
+}
