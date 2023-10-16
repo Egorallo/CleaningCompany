@@ -1,5 +1,16 @@
 #name:focus, #email:focus {
   border: 2px solid darkseagreen;
   background-color: magenta;
+}
 
+input:enabled {
+    background-color: greenyellow;
+}
+
+input:required {
+    border: 2px solid darkred;
+}
+
+input:disabled {
+    border: 2px solid yellow;
 }
