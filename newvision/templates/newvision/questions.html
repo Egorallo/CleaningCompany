@@ -1,6 +1,9 @@
 `{% extends "base_generic.html" %}
 {% load static %}
 
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'newvision/css/questions.css' %}"/>
+{% endblock %}
 
 {% block content %}
     <header>
@@ -46,9 +49,12 @@
     <p><dfn>HTML</dfn> stands for Hypertext Markup Language.</p>
     <br>
     <blockquote>
+        <p><q lang="en">English quote</q></p>
+        <p><q lang="fr">Citation française</q></p>
         <p>Жизнь — это как вождение велосипеда. Чтобы сохранить равновесие, вы должны двигаться.</p>
         <cite>Альберт Эйнштейн</cite>
     </blockquote>
+    <br>
 
     <section>
         <h2>Audio example:::::->>>>>></h2>
