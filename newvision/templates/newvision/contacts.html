@@ -1,14 +1,11 @@
 {% extends "base_generic.html" %}
 {% load static %}
 
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'newvision/css/contacts.css' %}"/>
+{% endblock %}
+
 {% block content %}
-    <style>
-        th, td {
-            border: 1px solid black;
-            padding: 5px;
-            text-align: center;
-        }
-    </style>
     <header>
         <h1>Contacts</h1>
         <p>Our employees info.</p>

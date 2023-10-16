@@ -1,0 +1,17 @@
+table tr:first-child {
+    background-color: greenyellow;
+}
+
+table tr:last-child {
+    background-color: yellow;
+}
+
+table tr:nth-child(even) {
+    background-color: slategray;
+}
+
+table th, td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
