@@ -1,7 +1,7 @@
 #name:focus, #email:focus {
-  border: 2px solid darkseagreen;
   background-color: magenta;
 }
+
 
 input:enabled {
     background-color: greenyellow;
@@ -14,3 +14,8 @@ input:required {
 input:disabled {
     border: 2px solid yellow;
 }
+
+input[type="number"]:invalid {
+    background-color: blue;
+}
+
