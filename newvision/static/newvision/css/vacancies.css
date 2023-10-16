@@ -1,7 +1,10 @@
+button[type='submit']:hover {
+    cursor: wait;
+}
+
 #name:focus, #email:focus {
     background-color: magenta;
 }
-
 
 input:enabled {
     background-color: greenyellow;
@@ -23,5 +26,7 @@ input[type="checkbox"]:checked,
 input[type="radio"]:checked {
     margin-right: 30px;
 }
+
+
 
 
