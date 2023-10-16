@@ -1,6 +1,10 @@
 {% extends "base_generic.html" %}
 {% load static %}
 
+{% block style %}
+    <link rel="stylesheet" href="{% static 'newvision/css/vacancies.css' %}"/>
+{% endblock %}
+
 {% block content %}
     <header>
         <h1>Job Vacancies</h1>

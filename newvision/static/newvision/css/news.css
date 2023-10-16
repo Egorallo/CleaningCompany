@@ -1,0 +1,18 @@
+.news-read-more:link {
+    text-decoration: none;
+    color: lightpink;
+}
+
+.news-read-more:visited {
+    color: limegreen;
+    text-decoration: none;
+}
+
+.news-read-more:hover {
+    text-decoration: underline;
+    color: #FFFFFF;
+}
+
+.news-read-more:active {
+    color: red;
+}
