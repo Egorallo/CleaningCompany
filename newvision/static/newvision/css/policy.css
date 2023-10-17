@@ -13,17 +13,16 @@ header {
     padding: 20px;
 }
 
-/* Style the h1 element with a star symbol */
 .h1-star {
     display: inline-block;
     background: linear-gradient(to right, transparent 50%, gold 50%);
     background-size: 200% 100%;
-    background-position: right bottom;
+    background-position: right;
     transition: background-position 0.3s;
 }
 
 .h1-star:hover {
-    background-position: left bottom;
+    background-position: left ;
 }
 
 section {
