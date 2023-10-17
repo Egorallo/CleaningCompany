@@ -1,5 +1,9 @@
-{% extends "base_generic.html" %}
+`{% extends "base_generic.html" %}
 {% load static %}
+
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'newvision/css/promos.css' %}">
+{% endblock %}
 
 {% block content %}
     <header>
@@ -8,10 +12,10 @@
     </header>
 
     <section>
-        <ul>
+        <ul class="ul-promos">
             <h2>Active Promos</h2>
             {% for promo in active_promos %}
-                <li>
+                <li class="li-promos">
                 <article>
                     <mark>{{ promo.code }}</mark>
                     <p>{{ promo.description }}</p>
@@ -24,10 +28,10 @@
     </section>
 
     <section>
-        <ul>
+        <ul class="ul-promos">
             <h2>Archived Promos</h2>
             {% for promo in archived_promos %}
-                <li>
+                <li class="li-promos">
                 <article>
                     <mark>{{ promo.code }}</mark>
                     <p>{{ promo.description }}</p>
@@ -46,3 +50,4 @@
     </figure>
 
 {% endblock %}
+`
