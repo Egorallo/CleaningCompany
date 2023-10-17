@@ -7,3 +7,45 @@
     content: "\2605";
     font-size: 150%;
 }
+
+header {
+    background-color: floralwhite;
+    padding: 20px;
+}
+
+/* Style the h1 element with a star symbol */
+.h1-star {
+    display: inline-block;
+    background: linear-gradient(to right, transparent 50%, gold 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.3s;
+}
+
+.h1-star:hover {
+    background-position: left bottom;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+p {
+    color: #666;
+    line-height: 1.5;
+}
+
+aside {
+    background-color: #f3f3f3;
+    padding: 10px;
+}
+
+aside a {
+    color: orangered;
+    text-decoration: none;
+}
