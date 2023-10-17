@@ -20,6 +20,13 @@
 
 }
 
+article {
+    column-count: 2;
+    column-gap: 20px;
+}
+article img {
+    width: 100%;
+}
 
 
 

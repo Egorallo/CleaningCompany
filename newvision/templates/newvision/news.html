@@ -7,7 +7,6 @@
 
 
 {% block content %}
-{#    <link rel="stylesheet" href="{% static 'newvision/css/news.css' %}"/>#}
     <section>
         <h1>News</h1>
         <ul class="ul-news">
@@ -17,7 +16,7 @@
                         <h2>{{ news.title }}</h2>
                         <img src="{{ news.image_url }}" alt="{{ news.title }}">
                         <section class="news-content">
-                            {{ news.content|truncatewords:30 }}
+                            <div class="truncate-text">{{ news.content }}</div>
                             <a class="news-read-more" href="{% url 'newvision:news_detail' news.id %}">Read more</a>
                             <p class="pub-date">{{ news.pub_date }}</p>
                         </section>

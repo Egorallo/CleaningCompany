@@ -16,3 +16,11 @@
 .news-read-more:active {
     color: red;
 }
+
+.truncate-text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 1000px;
+
+}
