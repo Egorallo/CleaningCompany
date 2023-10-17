@@ -36,13 +36,17 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Minimum height of the viewport */
+    min-height: 100vh;
     margin: 0;
     background-color: #d3d3d3;
 }
 
+.row {
+    overflow-x: hidden;
+}
+
 main {
-    flex: 1; /* Expand and push the footer to the bottom */
+    flex: 1;
 }
 
 footer {
