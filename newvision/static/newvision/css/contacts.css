@@ -35,3 +35,10 @@ caption {
     color: white;
     padding: 10px;
 }
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
