@@ -12,15 +12,47 @@
 
 .ul-reviews {
     list-style-type: none;
-
 }
 
 .li-reviews::before {
     content: "\2605";
 }
 
+.li-reviews p {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    color: darkslategrey;
+}
+
 .li-reviews {
     margin-right: 50px;
     margin-left: 50px;
+}
 
+h1, h2 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #333;
+}
+
+form {
+    font-family: Georgia, sans-serif;
+    font-size: 14px;
+    color: palevioletred;
+}
+
+form button:hover {
+    background-color: whitesmoke;
+}
+
+form button {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
