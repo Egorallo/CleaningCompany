@@ -2,9 +2,12 @@
 
 {% load static %}
 
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'cleaning/css/index.css' %}"/>
+{% endblock %}
 
 {% block content %}
-    <h1>Cleaning company Home</h1>
+    <h1><span class="company-name">Cleaning company</span> Home</h1>
     <p>
         Welcome to Cleaning company
     </p>
