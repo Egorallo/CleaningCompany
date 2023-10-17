@@ -20,6 +20,7 @@ input:disabled {
 
 input[type="number"]:invalid {
     background-color: blue;
+    width: 90px;
 }
 
 input[type="checkbox"]:checked,
@@ -27,6 +28,11 @@ input[type="radio"]:checked {
     margin-right: 30px;
 }
 
-
-
-
+.article-vacancy {
+    width: 45%;
+    margin: 10px;
+    float: left;
+    clear: none;
+    border: 1px solid palevioletred;
+    padding: 10px;
+}

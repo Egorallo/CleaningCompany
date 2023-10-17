@@ -13,7 +13,7 @@
 
     <section>
         <h2>Current Job Vacancies</h2>
-        <article itemscope itemtype="https://schema.org/JobPosting">
+        <article itemscope itemtype="https://schema.org/JobPosting" class="article-vacancy">
             <h3 itemprop="title">Head Cleaner</h3>
             <p itemprop="description">Cleaning manager, all info in the forwarding email</p>
             <p><strong>Location:</strong> <span itemprop="jobLocation">Moscow</span></p>
@@ -27,13 +27,21 @@
                     <input type="email" id="email" name="email" required>
                     <label for="age">Your age:</label>
                     <input type="number" id="age" name="age" min="18" required>
+                    <label>
+                        <input type="checkbox" name="option"> Bachelor's Degree ?
+                    </label>
+                    <label>
+                        <input type="radio" name="radio1" value="male"> Male
+                    </label>
+                    <label>
+                        <input type="radio" name="radio1" value="female"> Female
+                    </label>
                     <button type="submit">Apply</button>
                 </fieldset>
             </form>
         </article>
-        <hr>
 
-        <article itemscope itemtype="http://schema.org/JobPosting">
+        <article itemscope itemtype="http://schema.org/JobPosting" class="article-vacancy">
             <h3 itemprop="title">Junior Cleaner</h3>
             <p itemprop="description">All info in the forwarding email</p>
             <p><strong>Location:</strong> <span itemprop="jobLocation">Moscow</span></p>
@@ -61,7 +69,6 @@
             </form>
         </article>
     </section>
-
     <div class="pic">
         <img
                 srcset="
