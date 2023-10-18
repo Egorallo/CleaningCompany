@@ -25,3 +25,81 @@
 .logo-section:hover img {
     transform: scale(1.2);
 }
+
+.history-list {
+    list-style: none;
+    padding: 0;
+}
+
+.history-list > li {
+    margin-bottom: 30px;
+    border: 2px solid hotpink;
+    background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(78, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.history-list li:hover {
+    transform: scale(1.05);
+}
+
+section address {
+    font-weight: bold;
+    color: lemonchiffon;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.section-certificate {
+    position: relative;
+    z-index: 1;
+    border: 40px solid transparent;
+    border-image: url('https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice/border-diamonds.png') round;
+    background-image: url("https://assets.stickpng.com/images/61d183263a856e0004c6334a.png"), linear-gradient(45deg, rgba(0, 9, 36, 1) 0%, rgba(22, 121, 9, 1) 35%, rgba(255, 115, 0, 1) 100%);
+);
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-image-slice: 30;
+    text-align: center;
+    transition: transform 0.3s ease, margin 0.3s ease;
+}
+
+.section-certificate:hover {
+    transform: scale(1.1) translateY(10px);
+    z-index: 0;
+}
+
+.date-time {
+    position: relative;
+    z-index: 2;
+}
+
+.h1-certificate, .h2-certificate {
+    font-family: 'Anton', sans-serif;
+    color: mediumspringgreen;
+    text-transform: uppercase;
+}
+
+.h1-certificate {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.h2-certificate {
+    font-size: 24px;
+}
+
+.p-certificate {
+    font-family: 'Anton', sans-serif;
+    color: peachpuff;
+    font-size: 15px;
+    line-height: 3;
+    margin: 10px 0;
+}
