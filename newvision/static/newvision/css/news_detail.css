@@ -17,7 +17,6 @@
     position: relative;
     top: 30px;
     left: 10px;
-
 }
 
 article {
@@ -27,8 +26,6 @@ article {
 article img {
     width: 100%;
 }
-
-
 
 .uppercase-h1 {
     text-transform: uppercase;

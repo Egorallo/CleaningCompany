@@ -103,3 +103,11 @@ section address {
     line-height: 3;
     margin: 10px 0;
 }
+
+p[class^="date"] {
+    background-color: mediumorchid;
+}
+
+p[class$="time"] {
+    margin-left: 120px;
+}
