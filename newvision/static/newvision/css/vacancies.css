@@ -1,0 +1,42 @@
+button[type='submit']:hover {
+    cursor: wait;
+}
+
+#name:focus, #email:focus {
+    background-color: magenta;
+}
+
+input:enabled {
+    background-color: greenyellow;
+}
+
+input:required {
+    border: 2px solid darkred;
+}
+
+input:disabled {
+    border: 3px solid yellow;
+}
+
+input[type="number"]:invalid {
+    background-color: blue;
+    width: 90px;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    margin-right: 30px;
+}
+
+.article-vacancy {
+    width: 45%;
+    margin: 10px;
+    float: left;
+    clear: none;
+    border: 1px solid palevioletred;
+    padding: 10px;
+}
+
+.employee-img {
+    height: 10%;
+}

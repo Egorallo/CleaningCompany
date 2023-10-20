@@ -1,0 +1,11 @@
+.ul-promos {
+    margin: 30px;
+    padding: 0;
+    list-style: upper-roman none;
+}
+
+.li-promos {
+    margin-left: 20px;
+    padding-left: 20px;
+    background-color: ghostwhite;
+}

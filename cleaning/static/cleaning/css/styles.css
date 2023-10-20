@@ -1,0 +1,81 @@
+.sidebar-nav {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.sidebar-nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(20px);
+    z-index: -1;
+}
+
+
+.sidebar-nav li {
+    margin-right: 10px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 5px 17px;
+
+    background-color: #eaeaea;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.login-button.register {
+    background-color: #FFC0CB;
+}
+
+.login-button:hover {
+    background-color: #d4d4d4;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #d3d3d3;
+}
+
+.row {
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
+
+.col-sm-10 {
+    margin-top: 60px;
+}

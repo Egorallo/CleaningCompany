@@ -1,0 +1,44 @@
+table tr:first-child {
+    background-color: greenyellow;
+}
+
+table tr:last-child {
+    background-color: yellow;
+}
+
+table tr:nth-child(even) {
+    background-color: slategray;
+}
+
+table th, td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+table th:empty, td:empty {
+    background-color: white;
+    width: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}

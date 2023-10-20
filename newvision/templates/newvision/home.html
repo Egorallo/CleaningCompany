@@ -1,9 +1,13 @@
 {% extends "base_generic.html" %}
 {% load static %}
 
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'newvision/css/home.css' %}"/>
+{% endblock %}
+
 {% block content %}
-    <section>
-        <h2>Latest news</h2>
+    <section class="latest-news-section">
+        <h2 class="first-letter">Latest news</h2>
         <hr>
         <article>
             <h3>{{ latest_news.title }}</h3>
@@ -16,7 +20,7 @@
 
     <section id="banner">
         <a href="https://lepei.by/" target="_blank" style="display: inline-block; width: 300px; height: 250px;">
-            <img src="https://chistyulya.com/c.jpg" alt="ads" style="width: 150%; height: 100%; ">
+            <img src="https://chistyulya.com/c.jpg" alt="ads" style="width: 150%; height: 100%;" id="animated-banner">
         </a>
     </section>
 
@@ -32,7 +36,7 @@
                 </td>
                 <td>
                     <a href="https://gazelkin.ru/" target="_blank">
-                        <img src="https://gazelkin.ru/build/assets/header-logo-df51ac3d.png" alt="gazelkin logo"
+                        <img src="https://static.gazelkin.ru/assets/images/logo/logo-icon.svg" alt="gazelkin logo"
                              style="max-width: 80px;">
                     </a>
                 </td>

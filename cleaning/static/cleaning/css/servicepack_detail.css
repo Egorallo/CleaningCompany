@@ -1,0 +1,41 @@
+.available-packs-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 20px;
+}
+
+.servicepack {
+    text-align: center;
+    margin: 30px;
+    padding: 5px;
+    border: 3px solid hotpink;
+    background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(78, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.servicepack:hover {
+    transform: scale(1.05) translate(5px, 5px);
+}
+
+.servicepack > p.text-success {
+    background-color: lawngreen;
+}
+
+.servicepack > p.text-danger {
+    background-color: yellow;
+}
+
+input[type="submit"] {
+    background-color: cornflowerblue;
+    color: sandybrown;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #217dbb;
+}

@@ -1,0 +1,33 @@
+q:lang(en) {
+    quotes: "\201C" "\201D";
+}
+
+q:lang(fr) {
+    quotes: "\00AB" "\00BB";
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+details {
+    background-color: yellowgreen;
+    margin: 10px 0;
+    padding: 10px;
+    border: 3px solid hotpink;
+    border-radius: 5px;
+}
+
+summary {
+    cursor: wait;
+    font-weight: bold;
+}
+
+blockquote {
+    background-color: navajowhite;
+    padding: 10px;
+    border: 3px solid sandybrown;
+    border-radius: 5px;
+}

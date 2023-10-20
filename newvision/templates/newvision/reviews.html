@@ -1,6 +1,11 @@
 {% extends "base_generic.html" %}
 {% load static %}
 
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'newvision/css/reviews.css' %}"/>
+{% endblock %}
+
+
 {% block content %}
     <header>
         <h1>Customer Reviews</h1>
@@ -8,9 +13,9 @@
 
     <section>
         <h2>Reviews</h2>
-        <ul>
+        <ul class="ul-reviews">
             {% for review in reviews %}
-                <li>
+                <li class="li-reviews">
                     <h3>{{ review.reviewer_name }}</h3>
                     <p>Rating: {{ review.rating }} ⭐</p>
                     <p>{{ review.text }}</p>

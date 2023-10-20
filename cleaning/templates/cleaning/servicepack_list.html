@@ -1,9 +1,15 @@
 {% extends "base_generic.html" %}
 
+{% load static %}
+
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'cleaning/css/servicepack_list.css' %}">
+{% endblock %}
+
 {% block content %}
     <h1>Service Pack List</h1>
 
-    <div class="servicepack-row">
+    <div class="servicepack-grid">
         {% if servicepack_list %}
             {% for servicepack in servicepack_list %}
                 <div class="servicepack-item">
@@ -15,14 +21,5 @@
         {% endif %}
     </div>
 
-    <style>
-        .servicepack-row {
-            display: flex;
-            flex-wrap: wrap;
-        }
 
-        .servicepack-item {
-            margin-right: 10px;
-        }
-    </style>
 {% endblock %}

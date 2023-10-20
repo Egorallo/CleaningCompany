@@ -1,22 +1,27 @@
 {% extends "base_generic.html" %}
 {% load static %}
 
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'newvision/css/about.css' %}"/>
+{% endblock %}
+
 {% block title %}
 {% endblock %}
 {% block content %}
-    <header>
-        <h1>About us</h1>
-    </header>
+    <div id="about-low-res">
+        <header>
+            <h1 class="h1-font">About us</h1>
+        </header>
 
-    <section>
-        <h2>Our logo</h2>
-        <img src="https://t4.ftcdn.net/jpg/04/12/10/33/360_F_412103381_O6nWrELMkGIskDi8B3lCa8qrJWpUMWhb.jpg"
-             alt="logo" width="200" height="200">
-    </section>
+        <section class="logo-section">
+            <h2>Our logo</h2>
+            <img src="https://t4.ftcdn.net/jpg/04/12/10/33/360_F_412103381_O6nWrELMkGIskDi8B3lCa8qrJWpUMWhb.jpg"
+                 alt="logo" width="200" height="200">
+        </section>
 
-    <section>
-        <h2><em>Info about us</em></h2>
-        <pre>
+        <section class="section-select">
+            <h2><em>Info about us</em></h2>
+            <pre class="aboba">
 
 The company cares about your comfort and the cleanliness of your space.
 Our experience and dedication ensure that every client receives the highest
@@ -26,100 +31,120 @@ diligently to meet your needs and leave your space sparkling and spotless.
 Together we will create a clean and cozy place where you can enjoy every
 moment.
         </pre>
-    </section>
-
-    <section>
-        <h2>Video</h2>
-        <iframe src="https://www.youtube.com/embed/DdRC6mbfYSw?autoplay=1" frameborder="0" allowfullscreen width="800"
-                height="450"></iframe>
-    </section>
-
-    <section>
-        <h2>Our history</h2>
-        <p><strong>Year of foundation:</strong> 1990</p>
-        <p>
-            The company was founded in <sup>1990</sup> with the aim of providing high quality cleaning and maintenance
-            services.
-            cleanliness for our clients.
-        </p>
-        <p><strong>Year of successful operation:</strong> 1992</p>
-        <p>
-            In <sub>1992</sub>, we began to successfully complete our first projects and gain the trust of our clients
-            thanks to
-            our professional team and excellent quality of service.
-        </p>
-        <p><strong>Expansion:</strong> 1995</p>
-        <p>
-            In 1995, we successfully expanded the geography of our services and began serving clients in other regions.
-        </p>
-        <p><strong>Introduction of new technologies:</strong> 2000</p>
-        <p>
-            In 2000, the company actively introduced modern technologies and cleaning products to improve efficiency and
-            quality of service.
-        </p>
-        <p><strong>Ecological initiatives:</strong> 2003</p>
-        <p>
-            In 2003, we began to actively implement environmental initiatives in our work and use environmentally
-            friendly
-            clean cleaning products.
-        </p>
-        <p><strong>Technical renovations:</strong> 2006</p>
-        <p>
-            In 2006, the company carried out a major upgrade of equipment and technical base to provide more
-            high performance.
-        </p>
-        <p><strong>Award "Best Cleaning Company":</strong> 2011</p>
-        <p>
-            В 2011 году мы получили престижную награду "Лучшая клининговая компания" за выдающиеся достижения в отрасли.
-
-        </p>
-        <p><strong>25th anniversary:</strong> 2016</p>
-        <p>
-            In 2016, we celebrated our company's 25th anniversary with pride and gratitude to our customers and
-            employees.
-        </p>
-        <p><strong>Leading the market:</strong> 2023</p>
-        <p>
-            At the moment, we continue to be a leading company in the cleaning industry and strive to reach new heights
-            in
-            customer service.
-        </p>
-    </section>
-
-    <div>
-        <section>
-            <h2>Contacts</h2>
-            <address>
-                <p>Name of the company: ООО "Cleaning company"</p>
-                <p>Address: д. 30, ул. Примерная 12, Москва</p>
-                <p>Phone: +7 (123) 456-7890</p>
-                <p>Email: info@example.com</p>
-            </address>
         </section>
-        <hr>
+
         <section>
-            <h1>Certificate</h1>
-            <br>
-            <h2>Cleaning company</h2>
-            <p>Certificate</p>
-            <p>Awarded for outstanding achievements and high quality cleaning services.</p>
-            <p>Date issued: 1st of Jan of 2020</p>
+            <h2>Video</h2>
+            <iframe src="https://www.youtube.com/embed/DdRC6mbfYSw?autoplay=1" frameborder="0" allowfullscreen
+                    width="800"
+                    height="450"></iframe>
         </section>
+
+        <section>
+            <h2 style="text-align: center">Our history</h2>
+            <ul class="history-list">
+                <li>
+                    <p><strong>Year of foundation:</strong> 1990</p>
+                    <p class="fontz">
+                        The company was founded in <sup>1990</sup> with the aim of providing high-quality cleaning and
+                        maintenance services.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Year of successful operation:</strong> 1992</p>
+                    <p>
+                        In <sub>1992</sub>, we began to successfully complete our first projects and gain the trust of
+                        our clients thanks to our professional team and excellent quality of service.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Expansion:</strong> 1995</p>
+                    <p>
+                        In 1995, we successfully expanded the geography of our services and began serving clients in
+                        other regions.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Introduction of new technologies:</strong> 2000</p>
+                    <p>
+                        In 2000, the company actively introduced modern technologies and cleaning products to improve
+                        efficiency and quality of service.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Ecological initiatives:</strong> 2003</p>
+                    <p>
+                        In 2003, we began to actively implement environmental initiatives in our work and use
+                        environmentally-friendly cleaning products.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Technical renovations:</strong> 2006</p>
+                    <p>
+                        In 2006, the company carried out a major upgrade of equipment and technical base to provide more
+                        high performance.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Award "Best Cleaning Company":</strong> 2011</p>
+                    <p>
+                        In 2011, we received the prestigious "Best Cleaning Company" award for outstanding achievements
+                        in the industry.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>25th anniversary:</strong> 2016</p>
+                    <p>
+                        In 2016, we celebrated our company's 25th anniversary with pride and gratitude to our customers
+                        and employees.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Leading the market:</strong> 2023</p>
+                    <p>
+                        At the moment, we continue to be a leading company in the cleaning industry and strive to reach
+                        new heights in customer service.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+
+        <div>
+            <section>
+                <h2>Contacts</h2>
+                <address>
+                    <p>Name of the company: ООО "Cleaning company"</p>
+                    <p>Address: д. 30, ул. Примерная 12, Москва</p>
+                    <p>Phone: +7 (123) 456-7890</p>
+                    <p>Email: info@example.com</p>
+                </address>
+            </section>
+            <hr>
+            <section class="section-certificate">
+                <h1 class="h1-certificate">Certificate</h1>
+                <br>
+                <h2 class="h2-certificate">Cleaning company</h2>
+                <p class="p-certificate">Certificate</p>
+                <p class="p-certificate">Awarded for outstanding achievements and high quality cleaning services.</p>
+                <p class="p-certificate">Date issued: 1st of Jan of 2020</p>
+            </section>
+        </div>
+
+        <p class="date-time">Date and time:
+            <time datetime="2023-09-14T15:30:00">14th of september 2023, 15:30</time>
+        </p>
+
+        <p>
+            Бездомная Лягушка пела - квакала,<br>
+            Печально пела и при этом плакала.<br>
+            Наплакала Лягушка целый пруд.<br>
+            С тех самых пор лягушки в нём живут.
+        </p>
+        <picture>
+            <source srcset="https://cdn.7tv.app/emote/650dfb6258b80a4d09f0fae6/1x.webp" type="image/webp">
+            <img src="https://cdn.7tv.app/emote/650dfb6258b80a4d09f0fae6/1x.jpg" alt="">
+        </picture>
     </div>
-
-    <p>Date and time:
-        <time datetime="2023-09-14T15:30:00">14th of september 2023, 15:30</time>
-    </p>
-
-    <p>
-        Бездомная Лягушка пела - квакала,<br>
-        Печально пела и при этом плакала.<br>
-        Наплакала Лягушка целый пруд.<br>
-        С тех самых пор лягушки в нём живут.
-    </p>
-    <picture>
-        <source srcset="https://cdn.7tv.app/emote/650dfb6258b80a4d09f0fae6/1x.webp" type="image/webp">
-        <img src="https://cdn.7tv.app/emote/650dfb6258b80a4d09f0fae6/1x.jpg" alt="">
-    </picture>
 
 {% endblock %}

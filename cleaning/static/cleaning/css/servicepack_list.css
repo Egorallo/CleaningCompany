@@ -1,0 +1,26 @@
+.servicepack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+
+.servicepack-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(to right, transparent 50%, navajowhite 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    transition: background-position 0.3s;
+    border-radius: 8px;
+}
+
+.servicepack-item a {
+    text-decoration: none;
+    color: magenta;
+    display: block;
+}
+
+.servicepack-item:hover {
+    background-position: left;
+}

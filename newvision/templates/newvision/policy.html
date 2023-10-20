@@ -1,9 +1,13 @@
 {% extends "base_generic.html" %}
 {% load static %}
 
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'newvision/css/policy.css' %}"/>
+{% endblock %}
+
 {% block content %}
     <header>
-        <h1>Privacy policy</h1>
+        <h1 class="h1-star"> Privacy policy </h1>
         <p>Policy of our cleaning company.</p>
     </header>
 
@@ -26,7 +30,7 @@
     </section>
     <section>
         <h2>Contacts</h2>
-        <p>If you have questions or comments about our privacy policy, please contact us at contact@bestcleaners.com.</p>
+        <p>If you have questions or comments about our privacy policy, please contact us at <strong> contact@bestcleaners.com </strong>.</p>
     </section>
 
     <section>

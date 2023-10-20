@@ -1,6 +1,10 @@
 {% extends "base_generic.html" %}
 {% load static %}
 
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'newvision/css/promos.css' %}">
+{% endblock %}
+
 {% block content %}
     <header>
         <h1>Promos</h1>
@@ -8,27 +12,35 @@
     </header>
 
     <section>
-        <h2>Active Promos</h2>
-        {% for promo in active_promos %}
-            <article>
-                <mark>{{ promo.code }}</mark>
-                <p>{{ promo.description }}</p>
-            </article>
-        {% empty %}
-            <p>No active promos available.</p>
-        {% endfor %}
+        <ul class="ul-promos">
+            <h2>Active Promos</h2>
+            {% for promo in active_promos %}
+                <li class="li-promos">
+                <article>
+                    <mark>{{ promo.code }}</mark>
+                    <p>{{ promo.description }}</p>
+                </article>
+            {% empty %}
+                <p>No active promos available.</p>
+            {% endfor %}
+            </li>
+        </ul>
     </section>
 
     <section>
-        <h2>Archived Promos</h2>
-        {% for promo in archived_promos %}
-            <article>
-                <mark>{{ promo.code }}</mark>
-                <p>{{ promo.description }}</p>
-            </article>
-        {% empty %}
-            <p>No archived promos available.</p>
-        {% endfor %}
+        <ul class="ul-promos">
+            <h2>Archived Promos</h2>
+            {% for promo in archived_promos %}
+                <li class="li-promos">
+                <article>
+                    <mark>{{ promo.code }}</mark>
+                    <p>{{ promo.description }}</p>
+                </article>
+            {% empty %}
+                <p>No archived promos available.</p>
+            {% endfor %}
+            </li>
+        </ul>
     </section>
 
     <figure>
@@ -38,3 +50,4 @@
     </figure>
 
 {% endblock %}
+`
