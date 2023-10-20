@@ -4,11 +4,15 @@
     background-color: red;
 }
 
+.section-select {
+    margin-top: 80px;
+}
+
 .h1-font {
     font-family: 'Anton', 'Arial', cursive;
 }
 
-@media (max-width: 800px) and (max-height: 600px) {
+@media (max-width: 800px) or (max-height: 600px) {
     #about-low-res {
         font-size: 8px;
     }
@@ -16,6 +20,8 @@
 
 .logo-section {
     display: inline-block;
+    float: left;
+    margin-right: 10px;
 }
 
 .logo-section img {
@@ -66,13 +72,16 @@ section address {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    border-image-slice: 30;
+    border-image-slice: 40;
+    -webkit-border-image-slice: 40;
+    -moz-border-image-slice: 40;
+
     text-align: center;
     transition: transform 0.3s ease, margin 0.3s ease;
 }
 
 .section-certificate:hover {
-    transform: scale(1.1) translateY(10px);
+    transform: scale(1.1) translateY(10px) rotate(10deg);
     z-index: 0;
 }
 

@@ -36,3 +36,7 @@ input[type="radio"]:checked {
     border: 1px solid palevioletred;
     padding: 10px;
 }
+
+.employee-img {
+    height: 10%;
+}

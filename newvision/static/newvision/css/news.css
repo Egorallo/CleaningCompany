@@ -23,3 +23,8 @@
     overflow: hidden;
     width: 1000px;
 }
+
+.li-news::marker {
+    content: '\1F480';
+    font-size: 30px;
+}
