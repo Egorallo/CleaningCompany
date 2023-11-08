@@ -29,3 +29,6 @@ class Review(models.Model):
     text = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
 
+class Banner(models.Model):
+    image_url = models.URLField()
+    link_url = models.URLField()
