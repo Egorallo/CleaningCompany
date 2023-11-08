@@ -35,7 +35,7 @@ h2 {
     margin-left: 15px;
 }
 
-#animated-banner {
+#banner-image {
     animation: rotate360 1.5s linear infinite alternate;
     transform-origin: center;
 }
@@ -50,7 +50,7 @@ h2 {
 }
 
 
-#banner {
+#banner-container {
     margin-left: 400px;
 }
 

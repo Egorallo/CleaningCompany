@@ -3,10 +3,11 @@ from django.urls import reverse
 from django.views.generic import ListView
 from .forms import ReviewForm
 
-from .models import News, Promo, Review
+from .models import News, Promo, Review, Banner
 def home(request):
     latest_news = News.objects.latest('pub_date')
-    context = {'latest_news': latest_news}
+    banners = Banner.objects.all()
+    context = {'latest_news': latest_news, 'banners': banners}
     return render(request, 'newvision/home.html', context)
 def about(request):
     return render(request, 'newvision/about.html')

@@ -18,11 +18,29 @@
         </article>
     </section>
 
-    <section id="banner">
-        <a href="https://lepei.by/" target="_blank" style="display: inline-block; width: 300px; height: 250px;">
-            <img src="https://chistyulya.com/c.jpg" alt="ads" style="width: 150%; height: 100%;" id="animated-banner">
-        </a>
-    </section>
+{#    <section id="banner">#}
+{#        <a href="https://lepei.by/" target="_blank" style="display: inline-block; width: 300px; height: 250px;">#}
+{#            <img src="https://chistyulya.com/c.jpg" alt="ads" style="width: 150%; height: 100%;" id="animated-banner">#}
+{#        </a>#}
+{#    </section>#}
+
+    <div id="banner-container">
+    <a id="banner-link" target="_blank" style="display: inline-block; width: 300px; height: 250px;">
+        <img id="banner-image" alt="ads" style="width: 150%; height: 100%;">
+    </a>
+    </div>
+
+    <div id="banners-data" style="display: inline;">
+    {% for banner in banners %}
+        <div class="banner-data"
+             data-link-url="{{ banner.link_url }}"
+             data-image-url="{{ banner.image_url }}">
+        {{ banner.image_url }}
+
+        </div>
+    {% endfor %}
+    asad
+    </div>
 
     <section class="partners">
         <h2>Partners</h2>
@@ -44,6 +62,8 @@
         </table>
     </section>
 
+{% endblock %}
 
-
+{% block scripts %}
+    <script src="{% static 'newvision/js/banners.js' %}"></script>
 {% endblock %}
