@@ -3,9 +3,19 @@
 
 {% block styling %}
     <link rel="stylesheet" href="{% static 'newvision/css/home.css' %}"/>
+    <link rel="stylesheet" href="{% static 'newvision/css/scroll.css' %}"/>
 {% endblock %}
 
 {% block content %}
+
+    <section id="scroll-container">
+        <img src="{% static 'newvision/images/back_cleaning.jpeg' %}" id="back-cleaning"/>
+
+        <img src="{% static 'newvision/images/left_cleaning.png' %}" id="left-cleaning"/>
+        <img src="{% static 'newvision/images/right_cleaning.png' %}" id="right-cleaning"/>
+        <h1 id="text">Cleaning. Easy</h1>
+    </section>
+
     <section class="latest-news-section">
         <h2 class="first-letter">Latest news</h2>
         <hr>
@@ -91,4 +101,5 @@
 
 {% block scripts %}
     <script src="{% static 'newvision/js/banners.js' %}"></script>
+    <script src="{% static 'newvision/js/scroll.js' %}"></script>
 {% endblock %}
