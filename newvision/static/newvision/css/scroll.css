@@ -31,6 +31,7 @@
 #text {
     position: absolute;
     font-size: 7.5em;
+    opacity: 0;
     top: 0;
     font-family: 'Montserrat', sans-serif;
 }
