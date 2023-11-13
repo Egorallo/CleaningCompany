@@ -60,13 +60,21 @@
         <tr class="total ">
             <td>Total</td>
             <td colspan="3"></td>
-            <td class="num">${{ cart.get_total_price }}</td>
+            <td class="num">$<span id="totalPrice">{{ cart.get_total_price }}</span></td>
+
         </tr>
         </tbody>
     </table>
+
+    <input type="text" id="promoCode" placeholder="Enter promo code">
+    <button id="applyPromo" type="button">Apply Promo</button>
     <div class="checkout" style="margin-top: 10px; text-align: left;">
         <a href="{% url 'order:order_create' %}" class="button">
             Checkout
         </a>
     </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'cart/js/promo.js' %}"></script>
 {% endblock %}

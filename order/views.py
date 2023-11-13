@@ -4,6 +4,7 @@ from django.db import models
 from django.shortcuts import render, redirect
 from django.views import generic
 from cleaning.models import ServicePack
+from newvision.models import Promo
 from .models import OrderItem
 from cart.cart import Cart
 from .models import Order, OrderItem
@@ -13,9 +14,9 @@ from collections import Counter
 import logging
 import matplotlib
 from matplotlib import pyplot as plt
+from django.http import JsonResponse
+
 logger = logging.getLogger(__name__)
-
-
 
 def order_create(request):
     if not request.user.is_authenticated:

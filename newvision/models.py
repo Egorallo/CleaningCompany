@@ -14,6 +14,7 @@ class Promo(models.Model):
     code = models.CharField(max_length=20, unique=True)
     description = models.TextField()
     is_archived = models.BooleanField(default=False)
+    discount = models.DecimalField(max_digits=5, decimal_places=1, default=0)
 
     def __str__(self):
         return self.code
