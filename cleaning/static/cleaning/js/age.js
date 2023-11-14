@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    if (!localStorage.getItem('ageConfirmed')) {
+    if (!sessionStorage.getItem('ageConfirmed')) {
         showAgeModal();
     }
 });
@@ -23,7 +23,7 @@ function checkAge() {
 
     if (age >= 18) {
         alert(`You're ${age} yo. Day of the week you were born on: ${dayOfWeek}`);
-        localStorage.setItem('ageConfirmed', 'true');
+        sessionStorage.setItem('ageConfirmed', 'true');
         hideAgeModal();
 
     } else {
