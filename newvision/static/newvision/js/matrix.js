@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     const generateButton = document.getElementById('generateButton');
     const transposeButton = document.getElementById('transposeButton');
-
+    const addRowButton = document.getElementById('addRowButton');
+    const addColumnButton = document.getElementById('addColumnButton');
 
     generateButton.addEventListener('click', generateTable);
     transposeButton.addEventListener('click', transposeTable);
+    addRowButton.addEventListener('click', addRow);
+    addColumnButton.addEventListener('click', addColumn);
 
     document.getElementById('randomTable').addEventListener('click', highlightCell);
 
@@ -21,10 +24,32 @@ function generateTable() {
             const cell = row.insertCell();
             cell.textContent = Math.floor(Math.random() * 100);
         }
+
     }
 
     const transposeButton = document.getElementById('transposeButton');
     transposeButton.style.display = 'inline';
+}
+
+function addRow() {
+    const randomTable = document.getElementById('randomTable');
+    const newRow = randomTable.insertRow();
+
+    for (let i = 0; i < randomTable.rows[0].cells.length; i++) {
+        const cell = newRow.insertCell();
+        cell.textContent = Math.floor(Math.random() * 100);
+    }
+
+}
+
+function addColumn() {
+    const randomTable = document.getElementById('randomTable');
+
+    for (let i = 0; i < randomTable.rows.length; i++) {
+        const cell = randomTable.rows[i].insertCell();
+        cell.textContent = Math.floor(Math.random() * 100);
+    }
+
 }
 
 function transposeTable() {
@@ -47,22 +72,93 @@ function transposeTable() {
 function highlightCell(event) {
     const clickedCell = event.target;
 
-    // Если кликнули по ячейке
     if (clickedCell.tagName === 'TD') {
-        // Определение значения ячейки
         const cellValue = parseInt(clickedCell.textContent);
 
-        // Убираем выделение со всех ячеек
-        const allCells = document.getElementsByTagName('td');
-        for (let cell of allCells) {
+        const row = clickedCell.parentNode;
+        const cellsInRow = row.getElementsByTagName('td');
+        for (let cell of cellsInRow) {
             cell.classList.remove('highlighted');
         }
 
-        // Добавляем выделение для кликнутой ячейки в зависимости от условий
-        if (cellValue % 2 === 0) {
+        const maxSelectedCells = parseInt(document.getElementById('maxSelectedCells').value);
+
+        if (cellValue % 2 === 0 && !hasAdjacentSelectedCell(clickedCell, maxSelectedCells, cellsInRow)) {
             clickedCell.classList.add('highlighted-even');
-        } else {
+        } else if (cellValue % 2 !== 0 && !hasAdjacentSelectedCell(clickedCell, maxSelectedCells, cellsInRow)) {
             clickedCell.classList.add('highlighted-odd');
         }
     }
+}
+
+function hasAdjacentSelectedCell(clickedCell, maxSelectedCells, cellsInRow) {
+    const clickedCellIndex = Array.from(cellsInRow).indexOf(clickedCell);
+
+    let leftCount = 0;
+    let rightCount = 0;
+
+    let selectedCountRow = 0;
+    let selectedCountColumn = 0;
+    const columnIndex = clickedCell.cellIndex;
+    const table = clickedCell.closest('table');
+    const rows = table.rows;
+    const rowIndex = Array.from(rows).indexOf(clickedCell.parentNode);
+
+    for (let i = rowIndex; i >= 0; i--) {
+        const currentCell = rows[i].cells[columnIndex];
+        if (currentCell.classList.contains('highlighted-even') || currentCell.classList.contains('highlighted-odd')) {
+            selectedCountColumn++;
+        }
+    }
+
+    for (let i = rowIndex + 1; i < rows.length; i++) {
+        const currentCell = rows[i].cells[columnIndex];
+        if (currentCell.classList.contains('highlighted-even') || currentCell.classList.contains('highlighted-odd')) {
+            selectedCountColumn++;
+        }
+    }
+
+    for (let i = clickedCellIndex; i >= 0; i--) {
+        const currentCell = cellsInRow[i];
+        if (currentCell.classList.contains('highlighted-even') || currentCell.classList.contains('highlighted-odd')) {
+            selectedCountRow++;
+        }
+    }
+
+    for (let i = clickedCellIndex + 1; i < cellsInRow.length; i++) {
+        const currentCell = cellsInRow[i];
+        if (currentCell.classList.contains('highlighted-even') || currentCell.classList.contains('highlighted-odd')) {
+            selectedCountRow++;
+        }
+    }
+
+    for (let i = clickedCellIndex - 1; i >= 0; i--) {
+        const currentCell = cellsInRow[i];
+        if (currentCell.classList.contains('highlighted-even') || currentCell.classList.contains('highlighted-odd')) {
+            leftCount++;
+            if (leftCount <= maxSelectedCells) {
+                return true;
+            }
+        } else if (selectedCountRow >= maxSelectedCells || selectedCountColumn >= maxSelectedCells) {
+            return true;
+        } else {
+            break;
+        }
+    }
+
+    for (let i = clickedCellIndex + 1; i < cellsInRow.length; i++) {
+        const currentCell = cellsInRow[i];
+        if (currentCell.classList.contains('highlighted-even') || currentCell.classList.contains('highlighted-odd')) {
+            rightCount++;
+            if (rightCount <= maxSelectedCells) {
+                return true;
+            }
+        } else if (selectedCountRow >= maxSelectedCells || selectedCountColumn >= maxSelectedCells) {
+            return true;
+        } else {
+            break;
+        }
+    }
+
+    return false;
 }
