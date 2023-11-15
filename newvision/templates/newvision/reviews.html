@@ -40,9 +40,13 @@
                 </section>
             {% else %}
                 <p>You must be logged in as a customer to leave a review.</p>
-        {% endif %}
+            {% endif %}
         {% endfor %}
     {% else %}
         <p><a href="{% url 'login' %}?next={{ '/reviews' }}">Log in as customer</a> to leave a review.</p>
     {% endif %}
 {% endblock %}
+
+{#{% block scripts %}#}
+{#    <script src="{% static 'newvision/js/classes.js' %}"></script>#}
+{#{% endblock %}#}
