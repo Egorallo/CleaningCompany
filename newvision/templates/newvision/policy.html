@@ -10,27 +10,51 @@
         <h1 class="h1-star"> Privacy policy </h1>
         <p>Policy of our cleaning company.</p>
     </header>
+    <form id="employeeForm" style="margin-left: 30px">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required><br>
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required><br>
+
+        <label for="middleName">Middle Name:</label>
+        <input type="text" id="middleName" required><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" required><br>
+
+        <label for="experience">Experience (years):</label>
+        <input type="number" id="experience" required><br>
+
+        <button type="button" onclick="addEmployee()">Add Employee</button>
+        <button type="button" onclick="findYoungEmployees()">Find Young Employees</button>
+    </form>
+    <div id="result"></div>
 
     <section>
         <h2>Introduction</h2>
         <p>Welcome to privacy policy of our company.</p>
-        <p>Our customers are our greatest asset, and we are committed to ensuring the security and confidentiality of your data.</p>
+        <p>Our customers are our greatest asset, and we are committed to ensuring the security and confidentiality of
+            your data.</p>
     </section>
 
     <section>
         <h2>Information collection</h2>
-        <p>We collect information about you when you contact us through our website or other communications. This information includes:</p>
+        <p>We collect information about you when you contact us through our website or other communications. This
+            information includes:</p>
         <ul>
             <li>Name</li>
             <li>Email</li>
             <li>Phone number</li>
             <li>Address</li>
         </ul>
-        <p>We may also collect information about your device, IP address, browser and operating system to improve our site and provide a better service.</p>
+        <p>We may also collect information about your device, IP address, browser and operating system to improve our
+            site and provide a better service.</p>
     </section>
     <section>
         <h2>Contacts</h2>
-        <p>If you have questions or comments about our privacy policy, please contact us at <strong> contact@bestcleaners.com </strong>.</p>
+        <p>If you have questions or comments about our privacy policy, please contact us at <strong>
+            contact@bestcleaners.com </strong>.</p>
     </section>
 
     <section>
@@ -38,9 +62,14 @@
         <aside>
             <h3>Download privacy policy in PDF format</h3>
             <p>PDF version:</p>
-            <p><a href="https://www.termsfeed.com/public/uploads/2021/12/sample-privacy-policy-template.pdf" download target="_blank">Click here</a></p>
+            <p><a href="https://www.termsfeed.com/public/uploads/2021/12/sample-privacy-policy-template.pdf" download
+                  target="_blank">Click here</a></p>
         </aside>
     </section>
 
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'newvision/js/task.js' %}"></script>
 {% endblock %}
