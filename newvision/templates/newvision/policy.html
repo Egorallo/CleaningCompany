@@ -29,8 +29,13 @@
         <button type="button" onclick="addEmployee()">Add Employee</button>
         <button type="button" onclick="findYoungEmployees()">Find Young Employees</button>
     </form>
+    <div id="initial"></div>
     <div id="result"></div>
 
+    <div style="margin-left: 30px; margin-top: 30px">
+        <button type="button" onclick="displayClasses()">Classes task</button>
+        <div id="classes"></div>
+    </div>
     <section>
         <h2>Introduction</h2>
         <p>Welcome to privacy policy of our company.</p>
@@ -72,4 +77,5 @@
 
 {% block scripts %}
     <script src="{% static 'newvision/js/task.js' %}"></script>
+    <script src="{% static 'newvision/js/classes.js' %}"></script>
 {% endblock %}

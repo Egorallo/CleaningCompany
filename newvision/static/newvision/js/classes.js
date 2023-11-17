@@ -191,3 +191,11 @@ pressureWasher.power = 1400;
 console.log(pressureWasher.power);
 
 pressureWasher.power = 1;
+
+
+function displayClasses() {
+    const container = document.getElementById('classes');
+    container.innerHTML = '<h2>Classes task output:</h2>';
+
+    container.innerHTML += `<p>${pressureWasher.power} <br> ${pressureWasher.isHandheld} </p>`;
+}

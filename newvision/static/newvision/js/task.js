@@ -14,6 +14,8 @@
             document.getElementById('middleName').value = '';
             document.getElementById('age').value = '';
             document.getElementById('experience').value = '';
+
+            displayInitial(employees);
         }
 
         function findYoungEmployees() {
@@ -32,6 +34,20 @@
             } else {
                 employees.forEach(employee => {
                     resultContainer.innerHTML += `<p>${employee.lastName} ${employee.firstName} ${employee.middleName} - Age: ${employee.age}, Experience: ${employee.experience} years</p>`;
+                });
+            }
+        }
+
+
+        function displayInitial(employees) {
+            const initialContainer = document.getElementById('initial');
+            initialContainer.innerHTML = '<h2>Initial Employees:</h2>';
+
+            if (employees.length === 0) {
+                initialContainer.innerHTML += '<p>No employees.</p>';
+            } else {
+                employees.forEach(employee => {
+                    initialContainer.innerHTML += `<p>${employee.lastName} ${employee.firstName} ${employee.middleName} - Age: ${employee.age}, Experience: ${employee.experience} years</p>`;
                 });
             }
         }
