@@ -30,7 +30,7 @@ function rotateBanners() {
 }
 
 function updateRotationInterval() {
-    var newInterval = parseInt(document.getElementById("rotation-interval").value) * 1000; // Convert to milliseconds
+    var newInterval = parseInt(document.getElementById("rotation-interval").value) * 1000;
     if (!isNaN(newInterval) && newInterval > 0) {
         rotationInterval = newInterval;
         clearInterval(rotationTimer);
