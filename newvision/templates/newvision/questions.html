@@ -10,6 +10,29 @@
         <h1>Vocabulary</h1>`
         <p>Here you can find most popular questions and answers to them.</p>
     </header>
+    <form>
+        <label>
+            <input type="checkbox" id="font-size"> change font size
+        </label>
+    </form>
+        <div id="font-controls"></div>
+    <form>
+        <label>
+            <input type="checkbox" id="text-color"> change text color
+        </label>
+    </form>
+    <div id="font-color"></div>
+    <form>
+        <label>
+            <input type="checkbox" id="bg-color"> change background color
+        </label>
+    </form>
+    <div id="back-color"></div>
+
+    <div class="content">
+        <h1>example text</h1>
+        <p>WHAT THE HEEEELLLL EXAMPLESS</p>
+    </div>
 
     <section>
         <article>
@@ -67,3 +90,6 @@
 
 {% endblock %}
 `
+{% block scripts %}
+ <script src="{% static 'newvision/js/styleChange.js' %}"></script>
+{% endblock %}

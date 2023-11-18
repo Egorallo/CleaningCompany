@@ -3,9 +3,19 @@
 
 {% block styling %}
     <link rel="stylesheet" href="{% static 'newvision/css/home.css' %}"/>
+    <link rel="stylesheet" href="{% static 'newvision/css/scroll.css' %}"/>
 {% endblock %}
 
 {% block content %}
+
+    <section id="scroll-container">
+        <img src="{% static 'newvision/images/back_cleaning.jpeg' %}" id="back-cleaning"/>
+
+        <img src="{% static 'newvision/images/left_cleaning.png' %}" id="left-cleaning"/>
+        <img src="{% static 'newvision/images/right_cleaning.png' %}" id="right-cleaning"/>
+        <h1 id="text">Cleaning. Easy</h1>
+    </section>
+
     <section class="latest-news-section">
         <h2 class="first-letter">Latest news</h2>
         <hr>
@@ -18,11 +28,52 @@
         </article>
     </section>
 
-    <section id="banner">
-        <a href="https://lepei.by/" target="_blank" style="display: inline-block; width: 300px; height: 250px;">
-            <img src="https://chistyulya.com/c.jpg" alt="ads" style="width: 150%; height: 100%;" id="animated-banner">
+    {#    <section id="banner">#}
+    {#        <a href="https://lepei.by/" target="_blank" style="display: inline-block; width: 300px; height: 250px;">#}
+    {#            <img src="https://chistyulya.com/c.jpg" alt="ads" style="width: 150%; height: 100%;" id="animated-banner">#}
+    {#        </a>#}
+    {#    </section>#}
+
+    <div id="banner-container">
+        <a id="banner-link" target="_blank" style="display: inline-block; width: 300px; height: 250px;">
+            <img id="banner-image" alt="ads" style="width: 150%; height: 100%;">
         </a>
-    </section>
+    </div>
+
+    <div id="banners-data" style="display: inline;">
+        {% for banner in banners %}
+            <div class="banner-data"
+                 data-link-url="{{ banner.link_url }}"
+                 data-image-url="{{ banner.image_url }}">
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if user.is_authenticated %}
+        {% for group in user.groups.all %}
+            {% if group.name == 'Admin' %}
+                <form id="rotation-interval-form">
+                    <label for="rotation-interval">Rotation Interval (seconds): </label>
+                    <input type="number" id="rotation-interval" name="rotation-interval" value="3">
+                    <button type="button" id="update-interval-button">Update Interval</button>
+                </form>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <div style="width: 120px;
+            word-wrap: break-word;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate hic impedit minus nostrum quas quasi quos
+        rerum tenetur veniam veritatis? Aliquid perferendis voluptas voluptates? Alias ex libero nesciunt quis totam.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad corporis eligendi excepturi iste necessitatibus
+        nostrum pariatur repellat voluptate voluptatem. Eligendi excepturi explicabo facilis iure modi suscipit, vero!
+        Cumque, distinctio, quod?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ipsa quia ullam! Aspernatur consequatur dolores,
+        fugiat in pariatur quod saepe sed voluptates! Accusantium architecto deserunt, fugit iste mollitia officia qui.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur cum earum exercitationem, in
+        laboriosam laborum natus nemo praesentium quae qui sint suscipit, totam. Corporis dignissimos non nulla quia
+        quibusdam!
+    </div>
 
     <section class="partners">
         <h2>Partners</h2>
@@ -46,4 +97,9 @@
 
 
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'newvision/js/banners.js' %}"></script>
+    <script src="{% static 'newvision/js/scroll.js' %}"></script>
 {% endblock %}

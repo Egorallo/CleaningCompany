@@ -13,6 +13,18 @@
             <h1 class="h1-font">About us</h1>
         </header>
 
+        <label for="tableSize">Enter table size:</label>
+        <input type="number" id="tableSize" min="1" value="3">
+        <button id="generateButton">Generate Table</button>
+        <button id="transposeButton" style="display: none;">Transpose Table</button>
+        <label for="maxSelectedCells">Enter amount of cells selected:</label>
+        <input type="number" id="maxSelectedCells" min="1" value="1">
+        <button id="addRowButton">Add Row</button>
+        <button id="addColumnButton">Add Column</button>
+        <div id="matrixTable">
+            <table id="randomTable"></table>
+        </div>
+
         <section class="logo-section">
             <h2>Our logo</h2>
             <img src="https://t4.ftcdn.net/jpg/04/12/10/33/360_F_412103381_O6nWrELMkGIskDi8B3lCa8qrJWpUMWhb.jpg"
@@ -146,5 +158,10 @@ moment.
             <img src="https://cdn.7tv.app/emote/650dfb6258b80a4d09f0fae6/1x.jpg" alt="">
         </picture>
     </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'newvision/js/matrix.js' %}"></script>
 
 {% endblock %}
